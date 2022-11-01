@@ -1,0 +1,41 @@
+﻿@page
+@model Exam20203.Pages.PurchaseCart.IndexModel
+@{
+}
+<div>
+    <a href="~/Auth/Logout" class="btn btn-danger">LogOut</a>
+
+    <h1>Purchase List</h1>
+    <a href="~/PurchaseCart/InsertPurchase" class="btn btn-primary">Insert</a>
+    <br />
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Makanan Name</th>
+                <th>Quantity</th>
+                <th>Purchase Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Purchases)
+            {
+                <tr>
+                    <td>@item.MakananName</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.TransactionDate</td>
+                    <td>
+                        <a href="~/PurchaseCart/UpdatePurchase/@item.MakananId" class="btn btn-info">Update</a>
+                        <a href="~/PurchaseCart/DeletePurchase/@item.MakananId" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <form method="post">
+        <button class="btn btn-primary" type="submit">Pesan</button>
+    </form>
+</div>

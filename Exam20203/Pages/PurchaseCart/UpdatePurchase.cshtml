@@ -1,0 +1,27 @@
+﻿@page "{Form.MakananId}"
+@model Exam20203.Pages.PurchaseCart.UpdatePurchaseModel
+@{
+}
+
+    <form method="post">
+        <div>
+            <label asp-for="Form.UserId"></label>
+            <input asp-for="Form.UserId" readonly disabled />
+            <span asp-validation-for="Form.UserId"></span>
+            <br />
+            <label asp-for="Form.MakananId"></label>
+            <input asp-for="Form.MakananId" readonly disabled />
+            <span asp-validation-for="Form.MakananId"></span>
+            <br />
+            <label asp-for="Form.MakananName"></label>
+            <input asp-for="Form.MakananName" readonly disabled />
+            <span asp-validation-for="Form.MakananName"></span>
+            <br />
+            <label asp-for="Form.Quantity"></label>
+            <input asp-for="Form.Quantity" />
+            <span asp-validation-for="Form.Quantity"></span>
+        </div>
+        <div>
+            <button type="submit">Update Cart</button>
+        </div>
+    </form>

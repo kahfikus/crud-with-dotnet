@@ -1,0 +1,26 @@
+﻿@page
+@model Exam20203.Pages.Auth.LoginModel
+@{
+}
+<h1>Login</h1>
+<form method="POST">
+    <div class="form-group">
+        <label asp-for="Form.Username">Username :</label>
+        <input class="form-control" asp-for="Form.Username" placeholder="Username" />
+        <span asp-validation-for="Form.Username"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="Form.Password">Password :</label>
+        <input class="form-control" asp-for="Form.Password" type="password" placeholder="Password" />
+        <span asp-validation-for="Form.Password"></span>
+    </div>
+    <br />
+    <button class="btn btn-primary" type="submit">Login</button>
+    <br />
+    <div>
+        <p>
+            @Model.SuccessMessage
+        </p>
+    </div>
+</form>

@@ -1,0 +1,32 @@
+﻿@page 
+@model Exam20203.Pages.PurchaseCart.InsertPurchaseModel
+@{
+}
+
+    <div>
+        <h3>Insert Cart</h3>
+
+            <form method="POST">
+                <div>
+                    Product Name: <select asp-for="Form.MakananId">
+                        @foreach (var item in Model.ListProduct)
+                        {
+                            
+                            <option value="@item.MakananId">@item.MakananName, Stock: @item.MakananStock</option>
+                        }
+                    </select>
+                </div>
+                <div>
+                    <label asp-for="Form.Quantity"></label>
+                    <input asp-for="Form.Quantity" />
+                    <span asp-validation-for="Form.Quantity"></span>
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary">Buy</button>
+            </form>
+
+        <div>
+            <p>@Model.SuccessMessage</p>
+        </div>
+
+    </div>
